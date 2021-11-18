@@ -126,5 +126,6 @@ report(history,title="SimpleRNN")
 model.save("SimpleRNN.h5")
 
 
-
+newmodel = Sequential()
+newmodel.add(layers.SimpleRNN(32)) 
 
