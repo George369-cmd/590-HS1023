@@ -29,9 +29,11 @@ x_train = x_train.astype('float32') / 255.
 x_test = x_test.astype('float32') / 255.
 fX = fX.astype('float32') / 255.
 
-# Remove trucks from CIFAR100
-truck_idx = np.where(fY != [9])[0].tolist()
-fX = fX[truck_idx]
+# Remove trucks from CIFAR10
+truck_idx = np.where(y_train != [9])[0].tolist()
+x_train = x_train[truck_idx]
+truck_idx = np.where(y_test != [9])[0].tolist()
+x_test = x_test[truck_idx]
 
 x_train=x_train[0:NKEEP]
 x_test=x_test[0:NKEEP]
